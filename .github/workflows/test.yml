@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install latest Singularity
         run : |
-          apt update
+          sudo apt update
           wget http://ftp.at.debian.org/debian/pool/main/s/singularity-container/singularity-container_3.5.2+ds1-1_amd64.deb
           sudo dpkg -i singularity-container_3.5.2+ds1-1_amd64.deb
           sudo apt install -f
