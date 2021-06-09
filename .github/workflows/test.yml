@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install latest Singularity
         run : |
-          sudo apt update
+          # sudo apt update # that only wastes time and is not really needed
           wget http://ftp.at.debian.org/debian/pool/main/s/singularity-container/singularity-container_3.5.2+ds1-1_amd64.deb
           sudo dpkg -i singularity-container_3.5.2+ds1-1_amd64.deb
           sudo apt install -f
